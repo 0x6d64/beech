@@ -9,12 +9,14 @@ Time is limited, so I will make this short: I wanted to have a simpler method to
 - simple method of entry
 
 ###Planned for version 0.2
+- implementation of a cache using the Python "pickle" mechanism. It will read the content of the markdown file into memory, perform the desired operations and then write it back not only into the markdown file, but also into a pickled cache. Subsequent operations can use the cache file (and thus omit parsing the markdown file), as long as the cache file is up-to-date (based on "last changed date" of the files). Writing into the markdown file outside of beech will trigger an update of the cache when beech is run the next time.
 - beech reporting back entries for a certain time range, e.g. yesterday, last week, 30 days before
 
 ###Planned for future versions
 - append a file to an entry, beech moves the file to a subdirectory, renames the file to a UNIX time stamp
 - editing existing entries
 - adding a location for an entry via the OS X core location framework
+- parsing of an input file containing new entries. This will enable the user to use a service like [ittf.com](http://ittf.com) to send an email to an address, which then appends to a file in a dropbox folder (basic form of email-to-beech).
 - *your suggestion*
 
 ##Usage
@@ -40,7 +42,8 @@ This will render like this:
 >New lines will facilitate grepping the diary file.
 
 ##Known issues
-- Beech entry report is expected to be slow when the diary file grows to a larger size
+- Beech entry report is expected to be slow when the diary file grows to a larger size and no pickled cache is present
+- ~~manual edits on the diary file will have to be made with some caution, since they have to be ordered by time (or return of diary entries will not work as expected)~~ I expect this to be solved by using a pickled cache.
 - Beech was written by a python n00b with zero experience, don't expect elegant code.
 
 #Developed by
