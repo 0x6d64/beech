@@ -10,4 +10,6 @@ Initial Version with the following features:
 ##0.1.1 (2014-08-23)
 Various ideas about how to implement this finally settled on JSON as storage.
 
+##0.1.2 (2015-12-22)
+Picked up development and reviewed goals.
 
