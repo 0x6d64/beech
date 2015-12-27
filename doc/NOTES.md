@@ -1,0 +1,3 @@
+- representation for time durations: use the period marker as this: P0003-06-04T12:30:05
+- representation for points in time: always use the ISO format (see https://en.wikipedia.org/wiki/ISO_8601)
+- xx

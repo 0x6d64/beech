@@ -38,5 +38,8 @@ nosetests.xml
 # eclipse
 .metadata/
 
+# pycharm
+.idea/
+
 # never track the test log file (since it contains personal information)
-testlog.md
+testlog.md/

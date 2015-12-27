@@ -1,4 +1,4 @@
-#TODO for beech:
+# TODO for beech:
 
 - decide on usage pattern
 	- no params: open editor
@@ -11,7 +11,7 @@
 
 
 ---
-#Notes:
+# Notes:
 - Current metadata for every post: 
 	- date/time
 	- file attachement (optional)
