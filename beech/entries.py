@@ -1,6 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
+
 import datetime
 import uuid
-import json
 
 dateParseFormat = '%Y-%m-%d'
 
@@ -18,17 +22,25 @@ class Entries(object):
 
     def addmeasurement(self, signal, value, unit=None):
         m = Measurment(signal, value, unit)
-        self._entries.append(m)
+        self.add_entry(m)
 
     def adddiary(self, text):
         d = Diary(text)
-        self._entries.append(d)
+        self.add_entry(d)
+
+    def add_entry(self, entry):
+        self._entries.append(entry)
 
     def __iter__(self):
         return self._entries.__iter__()
 
 
 class Entry(object):
+    """
+    class that defines a generic entry
+    only metatdata attached are the type, date and a uuid
+    """
+
     def __init__(self, date=None):
         self.type = 'generic'
         self.__date = datetime.datetime.now() if date is None else date
@@ -45,7 +57,12 @@ class Entry(object):
         else:
             self.__date = datetime.datetime.strptime(value, dateParseFormat)
 
+
 class Diary(Entry):
+    """
+    adds a text property to the basic :class:`.Entry` class
+    """
+
     def __init__(self, text=None):
         super(Diary, self).__init__()
         self.type = 'diary'
@@ -67,6 +84,10 @@ class Diary(Entry):
 
 
 class Measurment(Entry):
+    """
+    class that defines a measurement
+    """
+
     def __init__(self, signal, value, unit=None):
         super(Measurment, self).__init__()
         self.type = 'measurement'
