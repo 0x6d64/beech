@@ -43,3 +43,4 @@ nosetests.xml
 
 # never track the test log file (since it contains personal information)
 testlog.md/
+/doc/_build/
