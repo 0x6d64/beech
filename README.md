@@ -1,4 +1,8 @@
 # Beech
+
+**Note**: This project is no longer under development. I never used it productively, but it turned out 
+to be a good exercise to implement the things present in this repo.
+
 A simple diary/lifelog system implemented in python. For Version info see the [history file](HISTORY.md).
 
 ## Purpose
